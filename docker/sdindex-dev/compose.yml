@@ -1,0 +1,9 @@
+services:
+  ws:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sdindex-dev
+    volumes:
+      - ../..:/sdindex
+    working_dir: /sdindex

@@ -1,0 +1,20 @@
+{
+  "dockerComposeFile": [
+    "../docker/sdindex-dev/compose.yml"
+  ],
+  "service": "ws",
+  "overrideCommand": true,
+  "workspaceFolder": "/sdindex",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // Docker
+        "ms-azuretools.vscode-docker",
+        // markdownlint
+        "DavidAnson.vscode-markdownlint",
+        // Python extension for Visual Studio Code
+        "ms-python.python"
+      ]
+    }
+  }
+}
