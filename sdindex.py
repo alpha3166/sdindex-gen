@@ -14,7 +14,7 @@ def to_dic(tag):
         span_text = ' '.join(span.stripped_strings)
         dic[span_class] = span_text.replace('\n', ' ')
     child_text = ' '.join([text.strip() for text in tag.find_all(
-        text=True, recursive=False) if len(text.strip()) > 0])
+        string=True, recursive=False) if len(text.strip()) > 0])
     if child_text != '':
         dic['text'] = child_text
     return dic
