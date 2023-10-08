@@ -1,10 +1,10 @@
 {
   "dockerComposeFile": [
-    "../docker/sdindex-dev/compose.yml"
+    "../docker/sdindex-gen-dev/compose.yml"
   ],
   "service": "ws",
   "overrideCommand": true,
-  "workspaceFolder": "/sdindex",
+  "workspaceFolder": "/sdindex-gen",
   "customizations": {
     "vscode": {
       "extensions": [
