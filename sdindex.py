@@ -27,9 +27,8 @@ def exec(filepath):
     soup = BeautifulSoup(data, 'html.parser')
 
     volume = soup.find(class_='mainTitleBook').string
-    volume = volume.replace('Software Design ', '')
-    if re.match(r'\d{4}年\d月号', volume):
-        volume = volume.replace('年', '年0')
+    volume = re.sub(r'Software Design (\d{4})年(\d{1,2})月号', r'\1-0\2', volume)
+    volume = re.sub(r'(\d{4}-)0(\d{2})', r'\1\2', volume)
 
     toc = soup.find(id='toc')
 
