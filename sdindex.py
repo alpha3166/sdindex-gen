@@ -105,7 +105,7 @@ def exec(filepath):
 
 
 def print_line(volume, order, title, num, subtitle, author):
-    print('\t'.join([volume, str(order).zfill(2), title, num, subtitle, author]))
+    print('\t'.join([volume, str(order).zfill(2), title, num, subtitle, author]).replace('|', '\\|'))
 
 
 if __name__ == "__main__":
