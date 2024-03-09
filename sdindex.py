@@ -101,11 +101,11 @@ def exec(filepath):
                 else:
                     author = latest_author
 
-                print_line(volume, str(order), title, num, subtitle, author)
+                print_line(volume, order, title, num, subtitle, author)
 
 
 def print_line(volume, order, title, num, subtitle, author):
-    print('\t'.join([volume, str(order).zfill(2), title, num, subtitle, author]).replace('|', '\\|'))
+    print('\t'.join([volume, str(order), title, num, subtitle, author]).replace('|', '\\|'))
 
 
 if __name__ == "__main__":
