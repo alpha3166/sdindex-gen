@@ -26,11 +26,16 @@ def exec(filepath):
 
     soup = BeautifulSoup(data, 'html.parser')
 
-    volume = soup.find(class_='mainTitleBook').string
+    volume = soup.find(class_='mainTitleBook')
+    if not volume:
+        volume = soup.find(class_='booktitle').find(class_='title')
+    volume = volume.string
     volume = re.sub(r'Software Design (\d{4})年(\d{1,2})月号', r'\1-0\2', volume)
     volume = re.sub(r'(\d{4}-)0(\d{2})', r'\1\2', volume)
 
     toc = soup.find(id='toc')
+    if not toc:
+        toc = soup.find(class_='bookinfo--contents')
 
     latest_author = '-'
     order = 0
