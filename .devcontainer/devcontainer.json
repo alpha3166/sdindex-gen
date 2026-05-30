@@ -1,18 +1,13 @@
 {
-  "dockerComposeFile": [
-    "../docker/sdindex-gen-dev/compose.yml"
-  ],
-  "service": "ws",
-  "overrideCommand": true,
-  "workspaceFolder": "/sdindex-gen",
+  "name": "sdindex-gen",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/mise:1": {}
+  },
+  "postCreateCommand": "mise use --global python@latest; mise exec -- pip install autopep8 beautifulsoup4; mise reshim; echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
   "customizations": {
     "vscode": {
       "extensions": [
-        // Docker
-        "ms-azuretools.vscode-docker",
-        // markdownlint
-        "DavidAnson.vscode-markdownlint",
-        // Python extension for Visual Studio Code
         "ms-python.python"
       ]
     }
