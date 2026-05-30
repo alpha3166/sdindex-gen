@@ -4,7 +4,7 @@
   "features": {
     "ghcr.io/devcontainers-extra/features/mise:1": {}
   },
-  "postCreateCommand": "mise use --global python@latest; mise exec -- pip install autopep8 beautifulsoup4; mise reshim; echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
+  "postCreateCommand": "set -e; mise use --global python@latest; mise exec -- pip install autopep8 beautifulsoup4; mise reshim; echo 'eval \"$(mise activate bash)\"' >> ~/.bashrc",
   "customizations": {
     "vscode": {
       "extensions": [
