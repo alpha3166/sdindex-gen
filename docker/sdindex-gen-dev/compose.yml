@@ -1,9 +1,0 @@
-services:
-  ws:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: sdindex-gen-dev
-    volumes:
-      - ../..:/sdindex-gen
-    working_dir: /sdindex-gen
